@@ -1,0 +1,57 @@
+.nfa-container {
+    position: relative;
+  }
+  
+  .state {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid black;
+    text-align: center;
+    line-height: 50px;
+  }
+  
+  .transition {
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 20px;
+    background-color: white;
+  }
+  
+  .transition::before {
+    content: attr(data-label);
+  }
+  
+  [data-from='q1'] {
+    top: 25px;
+    left: 75px;
+  }
+  
+  [data-to='q1'] {
+    top: 25px;
+    left: 0px;
+  }
+  
+  [data-from='q2'] {
+    top: 25px;
+    left: 125px;
+  }
+  
+  [data-to='q2'] {
+    top: 25px;
+    left: 50px;
+  }
+  
+  [data-from='q3'] {
+    top: 25px;
+    left: 175px;
+  }
+  
+  [data-to='q3'] {
+    top: 25px;
+    left: 100px;
+  }
+  

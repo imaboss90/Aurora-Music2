@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="play.js"></script>
+  <style>
+    body{
+   
+   /*--dist: 20vmin;*/
+   --item_count: 6;
+   --rot_offset: 90deg;
+   
+   /*justify-content: center;
+   align-items: center;
+   display: flex;
+   */
+   
+    }
+    
+    /* Style the header */
+   
+    /* Style the main section */
+    main {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        height: 915px;
+        
+        
+      
+    }
+
+  
+
+    .container {
+  position: absolute;
+  top: 43%;
+ margin-right: 55%;
+  transform: translate(-10%, -50%);
+  
+  
+}
+
+.section1{
+    margin-top: 10%;
+    margin-bottom: 25%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.section2{
+    margin-top: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 106px;
+  height: 136px;
+  background-color: #544C84;
+  margin-left: 21px;
+  border-radius: 15px;
+}
+
+.box img{
+    margin-top: 15px;
+    width: 75px;
+    height: 75px;
+    
+}
+h1{
+    font-size: 1.8em;
+    color: white;
+    margin-left: 6%;
+    
+}
+
+h3{
+    font-size: 1.8em;
+    color: white;
+    margin-left: 6%;
+}
+
+    /* Style the boxes in the main section */
+    .box1 {
+        background-color: #ccc;
+        padding: 1em;
+        width: 20%;
+        height: 200px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 200px;
+        font-size: 2em;
+        margin: auto;
+        margin-top: 16%;
+    }
+
+
+    .rightside{
+        display: flex;
+        flex-direction: column;
+        vertical-align: middle;
+        justify-content: center;
+    
+        margin-left: 60%;
+        margin-top: 5%;
+    }
+
+    h2{
+        display: flex;
+        flex-direction: column;
+        color:white;
+        font-size: 1.8em;
+        left: 0;
+    
+        
+    }
+
+    .box2 {
+        display: flex;
+        flex-direction: column;
+        background-color:#544C84;
+        padding: 1em;
+        width: 315px;
+        height: 414px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 200px;
+        font-size: 2em;
+        margin: auto;
+        margin-top: 5%;
+        border-radius: 15px;
+    }
+
+    .contain{
+        margin-top: -5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        margin-top: 26px ;
+        background-color:black;
+        
+        height: 75px;
+        
+    }
+
+    img {
+        width: 75px;
+        height: 75px;
+        cursor: pointer;
+    }
+
+    .row p {
+        margin-left: 10px;
+        
+        color: white;
+    }
+
+    .row:hover{
+        background-color: white;
+        opacity: 50%;
+    }
+    
+    
+    /* Style the soundbar */
+    .soundbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #291348;
+        background-size: 200%;
+        position:absolute;
+        bottom:0;
+        width:90%;
+        height:100px;
+        border-radius: 122px;
+        margin-bottom: 10px;
+    }
+
+    #progress-bar {
+        margin-top: 50px;
+      height: 5px;
+      width: 50%;
+      background-color: #9b59b6;
+      bottom: 0;
+    }
+
+    #soundbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: grid;
+      grid-template-columns: 15% 70% 15%;
+      width:90%;
+        height:100px;
+        margin: auto;
+        border-radius: 122px;
+        margin-bottom: 10px;
+      background-color: #141223;
+      
+    }
+    #soundbar img {
+      width: 75px;
+      height: 75px;
+      margin-top: 14px;
+      margin-left: 25%;
+      margin-right: 10px;
+     
+    }
+
+    #soundbar h5{
+        width: 130px;
+    margin-left: 15px;
+    color: #fff;
+    line-height: 17px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    }
+
+    #soundbar .subtitle {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: rgb(209, 204, 204);
+    width: 100px;
+}
+    #soundbar .middleS{
+        display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #soundbar .middleL{
+        display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #soundbar .middleR{
+        display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #soundbar .progress-container {
+    display: flex;
+    position: absolute;
+    transform: translate(-50%,-10%);
+    top: 20%;
+}
+    #soundbar .progress-container img {
+        width: 27px;
+        height: 27px;
+        
+    }
+
+    #soundbar .time{
+      justify-content: flex-end;
+      align-items: flex-end;
+        margin-top: 70px;
+        margin-left: 100px;
+        font-size: 1px;
+    }
+
+    #soundbar .progress-bar {
+    width: 60%;
+    height: 5px;
+    /* margin-top: 50px; */
+    background-color: #9b59b6;
+    border-radius: 15px;
+}
+    #soundbar .time {
+      color: white;
+    }
+
+    
+
+    .outer {
+        
+    --angle: calc(360deg * var(--index) / var(--item_count) - var(--rot_offset));
+    transform:  translate(-50%, -50%) rotate(var(--angle)) translate(var(--dist)) rotate(calc(-1 * var(--angle))) !important;
+    transition: all 1s;
+  }
+.class {
+    height: 12vmin;
+    width: 12vmin;
+    left: 50%;
+    top: 50%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    border-radius: 50%;
+    transform:  translate(-50%, -50%);
+    z-index: 1;
+    /* pointer-events: none;  */
+  }
+  .hov {
+    pointer-events: all;
+    height: 10vmin;
+    width: 10vmin;
+    left: 50%;
+    top: 50%;
+    /*background-color: green;*/
+    position: absolute;
+    border-radius: 50%;
+    transform:  translate(-50%, -50%);
+  }
+  .hov:hover {
+    width: 45vmin;
+    height: 45vmin;
+  }
+  .hov:hover > .outer {
+    --dist: 18vmin ;
+    --rot_offset: calc(90deg );
+    /* pointer-events: all; */
+  }
+  .hov:not(:hover) > .outer {
+    --dist: 0vmin ;
+    --rot_offset: 0deg;
+  }
+
+  .outer:hover {
+    --dist: 20vmin !important;
+    background-color: rgb(255, 255, 255);
+  }
+
+.class img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    height: 17vmin;
+    width: 17vmin;
+    background-color: #544C84;
+    z-index: 2;
+
+}
+
+.middle span{
+  font-size: 35px;
+  
+  color: white;
+}
+
+      .aurora-outer {
+    background: linear-gradient(45deg, #CCC1F0 0%, #543b69 49%, #2F203B 82%);
+    /*background: linear-gradient(45deg, #32a6ff 0%, #3f6fff 49%, #8d54ff 82%);*/
+    background-size: 200%;
+    animation: aurora 10s infinite;
+}
+
+.aurora-inner {
+    background: radial-gradient(rgba(184, 61, 61, 0), rgba(255, 255, 255, 0.15));
+    background-size: 200%;
+    animation: aurora 7s infinite;
+}
+
+@keyframes aurora {
+
+    0% {
+
+        background-position: left top;
+
+    }
+
+    25% {
+
+        background-position: right top;
+
+    }
+
+    50% {
+
+        background-position: right bottom;
+
+    }
+
+    75% {
+
+        background-position: left bottom;
+
+    }
+
+    100% {
+
+        background-position: left top;
+
+    }
+}
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    color: white;
+    margin-left: 120px;
+    margin-top: 25px;
+    }
+
+  .navbar .link {
+      color: rgb(255, 255, 255);
+    padding: 0 20px;
+    font-size: 1.6rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    
+    }
+
+  .navbar .link img {
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+   
+    }
+
+  .navbar button{
+      background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 30px;
+    border: 0px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-left: 540px;
+    margin-top: 20px;
+    text-decoration: none;
+    
+    }
+
+
+  </style>
+</head>
+
+<body class="aurora-outer">
+  <header>
+    <nav class="navbar">
+        <a class="link" href="#">
+          <img src="Home.png" alt="Home">
+          Home
+        </a>
+        <a class="link" href="#">
+          <img src="Search.png" alt="Search">
+          Search
+        </a>
+        <a class="link" href="#">
+          <img src="Library.png" alt="Library">
+          Library
+        </a>
+        <a class="link" href="#">
+          <img src="CreatePlaylist.png" alt="Create Playlist">
+          Create Playlist
+        </a>
+        <a class="link" href="#">
+          <img src="FavoriteIcon.png" alt="Liked Songs">
+          Liked Songs
+        </a>
+        <a><button type="button"><a href="login.html" role="button">Log In</a></button></li>
+      </nav>
+    
+
+  </header>
+
+  <main>
+    <div class="container">
+        <h1>Some text above section 1</h1>
+        <div class="section1">
+          <div class="box">
+            <img src="https://via.placeholder.com/100" alt="Image 1">
+            <p>Text 1</p>
+          </div>
+          <div class="box">
+            <img src="https://via.placeholder.com/100" alt="Image 2">
+            <p>Text 2</p>
+          </div>
+          <div class="box">
+            <img src="https://via.placeholder.com/100" alt="Image 3">
+            <p>Text 3</p>
+          </div>
+        </div>
+        <h3>Some text above section 2</h3>
+        <div class="section2">
+          <div class="box">
+            <img src="https://via.placeholder.com/100" alt="Image 4">
+            <p>Text 4</p>
+          </div>
+          <div class="box">
+            <img src="https://via.placeholder.com/100" alt="Image 5">
+            <p>Text 5</p>
+          </div>
+          <div class="box">
+            <img src="https://via.placeholder.com/100" alt="Image 6">
+            <p>Text 6</p>
+          </div>
+        </div>
+      </div>
+    
+    <div class="rightside">
+        <h2>Frequently Played Playlists</h2>
+        <div class="box2">
+            <div class="contain">
+                <div class="row">
+                    <img src="2.png" alt="" onclick="uploadImage(this)">
+                    <p>Text 1</p>
+                  </div>
+                  <div class="row">
+                    <img src="2.png" alt="" onclick="uploadImage(this)">
+                    <p>Text 2</p>
+                  </div>
+                  <div class="row">
+                    <img src="2.png" alt="" onclick="uploadImage(this)">
+                    <p>Text 3</p>
+                  </div>
+                  <div class="row">
+                    <img src="2.png" alt="" onclick="uploadImage(this)">
+                    <p>Text 4</p>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div id="soundbar">
+
+        <div class="middleL">
+            <img src="2.png" alt="artist image">
+            <h5 id="title">
+                Song Title 
+                <div class="subtitle">Singer 1</div>
+            </h5>
+          </div>
+          <div class="middleS">
+            <div class="progress-container">
+              <img src="PreviousIcon.png" alt="icon">
+              <img src="PlayIcon.png" alt="icon" onclick="playMusic()">
+              <img src="NextIcon.png" alt="icon">
+            </div>
+            <div class="time">0:00</div>
+
+            <div class="progress-bar" style="
+    transform: translate(-0%,-50%);
+    bottom: 15%;
+    position: absolute;
+"></div>
+            <div class="time">3:00</div>
+          </div>
+          <div class="middleR">
+            
+            <input type="range" min="0" max="100" value="50">
+            
+          </div>
+          <div id="progress-bar">
+        
+
+        </div>
+    </div>
+  </main>
+
+  <div class="aurora-outer">
+    <div class="aurora-inner">
+      
+    </div>
+</div>
+
+  <div class="hov">
+    <div class="class middle"><span>Mix</span></div>
+    <div class="class outer" style="--index: 1;"><img src="Doja.png" alt="Artist1"></div>
+    <div class="class outer" style="--index: 2;"><img src="Omar.png" alt="Artist1"></div>
+    <div class="class outer" style="--index: 3;"><img src="Dua.png" alt="Artist1"></div>
+    <div class="class outer" style="--index: 4;"><img src="Weeknd.png" alt="Artist1"></div>
+    <div class="class outer" style="--index: 5;"><img src="Miley.png" alt="Artist1"></div>
+    <div class="class outer" style="--index: 6;"><img src="Tyler.png" alt="Artist1"></div>
+</div>
+
+<audio id="music" src="2.mp3"></audio>
+
+<script>
+    function playMusic() {
+      var music = document.getElementById('music');
+      music.play();
+
+      // Update progress bar every second
+      setInterval(function() {
+        var progress = document.getElementById('progress-bar');
+        progress.style.width = music.currentTime / music.duration * 100 + '%';
+      }, 1000);
+    }
+
+    const colorPicker = document.getElementById('color-picker');
+ 
+  colorPicker.addEventListener('change', () => {
+    document.body.style.backgroundColor = colorPicker.value;
+  });
+
+  </script>
+</body>
+
+</html>
