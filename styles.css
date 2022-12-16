@@ -1,0 +1,28 @@
+/* CSS styles for the navigation bar and the settings icon */
+nav {
+  /* styles for the navigation bar */
+}
+
+nav li {
+  /* styles for the links in the navigation bar */
+}
+
+.settings {
+  /* styles for the settings icon and the dropdown menu */
+}
+
+.settings button {
+  /* styles for the settings icon */
+}
+
+.settings .dropdown {
+  /* styles for the dropdown menu */
+}
+
+.settings .dropdown li {
+  /* styles for the sections in the dropdown menu */
+}
+
+.settings .dropdown .color-square {
+  /* styles for the color squares in the dropdown menu */
+}
